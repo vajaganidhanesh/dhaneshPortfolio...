@@ -106,7 +106,8 @@ window.onscroll=function(){
     if(window.pageYOffset>=200)
     {
         document.getElementById("navbar").style.background= 'white';
-        document.getElementById("navbar").style.transition='3s';
+        document.getElementById("navbar").style.boxShadow= '0 0px 10px rgba(36, 37, 38, 0.881); ';
+        document.getElementById("navbar").style.transition='1s';
     }
     else{
         document.getElementById("navbar").style.background= 'transparent';
