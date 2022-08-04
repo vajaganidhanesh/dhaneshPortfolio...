@@ -513,14 +513,29 @@ button:hover{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .icons{
-    font-size: 30px;
-    margin: 0px;
-
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 40px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+    border-radius: 50px;
+    box-shadow: 0 6px 15px rgba(36, 37, 38, 0.219);
+    transition: .8s;
 }
 
+
 .icons:hover{
-    color:rgba(105, 105, 101, 0.726);
+    background:#7f00ff;
     cursor: pointer;
+    transform: translateY(-10px);
+    transition: .8s;
+}
+.icons:hover a{
+    color:white
 }
 
 @media (min-width:200px) and (max-width:780px)
@@ -661,6 +676,13 @@ button:hover{
    .skills_heading{
     font-size: 17px;
    }
+   .html_css{
+    display: flex;
+   }
+   .skill_desc_webtool_name{
+    padding-left: 20px;
+    padding-right: 10px;
+   }
    .skill_desc_tool{
     font-size:14px;
     line-height: 1.3;
@@ -714,5 +736,8 @@ button:hover{
         text-align: center;
     }
 
-    
+    .socialMedia_icons
+    {
+        row-gap: 10px;
+    }
 }
