@@ -27,7 +27,7 @@ var tl = gsap.timeline();
 
 tl.from('a' , {
     stagger: .3,
-    duration: 2,
+    duration: 1,
     y: 20,
     delay:0,
     ease: 'Expo.easeInOut',

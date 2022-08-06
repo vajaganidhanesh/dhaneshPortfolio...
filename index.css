@@ -657,7 +657,7 @@ textarea::placeholder{
         transition: .4s;
         padding: 0px 20px;
         width: 100%;
-       background: white;
+        background: white;
     }
     .nav_link{
         width: 100%;
