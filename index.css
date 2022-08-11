@@ -155,6 +155,13 @@ a{
     color: black;
     cursor: pointer;
 }
+button > a{
+    color: #f4f4f4;
+}
+
+button > a:hover{
+    color: #f4f4f4;
+}
 
 /* css for banner */
 

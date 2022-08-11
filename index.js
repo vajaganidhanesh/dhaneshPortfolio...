@@ -12,7 +12,6 @@ function navbar(){
         document.getElementById("nav_links").style.height="250px";
         document.getElementById("icon").classList.remove("fa-bars");
         document.getElementById("icon").classList.add("fa-xmark");
-
         navtoggle=true;
     }
     else{
