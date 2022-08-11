@@ -191,13 +191,13 @@ button > a:hover{
 }
 
 .cols0{
-    width: 50%;
+    width: 40%;
 }
 .cols1{
-    width: 50%;
+    width: 60%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     padding-left: 0px;
 }
 
@@ -231,7 +231,7 @@ h1{
 
 p{
     display: block;
-    font-size: 1.2em;
+    font-size:18px;
     color: #3d535f;
 }
 
@@ -269,7 +269,7 @@ button:hover{
 }
 .imgbox > img {
     margin-top: 60px;
-    width: 100%;
+    width: 80%;
     height: 100%;
     position: relative;
     width: calc(130% - 80px);
