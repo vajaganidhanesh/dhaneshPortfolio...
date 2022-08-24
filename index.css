@@ -1067,6 +1067,7 @@ textarea::placeholder{
     .contact_whatsapp{
         padding: 3px 10px;
         height: auto;
+        bottom: 30px;
     }
     .whatsapp_text ,.whtsapp_icon{
        font-size: 14px;
