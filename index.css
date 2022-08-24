@@ -4,14 +4,19 @@
     box-sizing: border-box;
 }
 
+
 @font-face {
-    font-family:medium ;
-    src: url(./assets/Nunito-Medium.ttf);
+    font-family:semibold ;
+    src: url(./assets/Poppins-SemiBold.ttf);
 }
 
 @font-face {
-    font-family:extraLight ;
-    src: url(./assets/Nunito-ExtraLight.ttf);
+    font-family:bold ;
+    src: url(./assets/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family:regular ;
+    src: url(./assets/Poppins-Regular.ttf);
 }
 
 #loader{
@@ -118,11 +123,13 @@
     height:80px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .logo{
     font-weight: 300;
-    font-size: 40px;
-    font-family: medium;
+    font-size: 30px;
+    align-items: center;
+    font-family: semibold;
 }
 .nav_container{
     width:50%;
@@ -144,9 +151,9 @@
 
 .nav_link{
     display: inline-block;
-    font-family:extraLight;
-    font-weight: bold;
-    font-size: 17px;
+    font-family:semibold;
+    font-weight: 500;
+    font-size: 15px;
     text-transform: capitalize;
 }
 
@@ -155,12 +162,17 @@ a{
     color: black;
     cursor: pointer;
 }
+
+.nav_link > a:hover{
+    color: #0CBC8B;
+}
+
 button > a{
     color: #f4f4f4;
 }
 
 button > a:hover{
-    color: #f4f4f4;
+    color: #0CBC8B;
 }
 
 /* css for banner */
@@ -177,8 +189,10 @@ button > a:hover{
     column-gap: 40px;
     color:black;
     overflow: hidden;
-    /* background-image: url(./assets/banner-3.jpg); */
+    z-index: 10;
+    position: relative;
 }
+
 
 .wrapper
 {
@@ -186,12 +200,14 @@ button > a:hover{
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
-    padding-left: 7%;
+    padding-left: 9.6%;
     width: 100%;
 }
 
+
 .cols0{
     width: 40%;
+    z-index:10;
 }
 .cols1{
     width: 60%;
@@ -215,7 +231,7 @@ button > a:hover{
     width: 45px;
     content: '';
     bottom: 10px;
-    background: #7f00ff;
+    background: #0CBC8B;
 }
 h1{
     display: block;
@@ -225,7 +241,7 @@ h1{
 }
 
 .multiText{
-    color:#7f00ff;
+    color:#5F7EEC;
     text-transform: capitalize;
 }
 
@@ -248,7 +264,7 @@ button{
     font-weight: 400;
     color:#fff;
     cursor: pointer;
-    background: #3d535f;
+    background:#5F7EEC;
     padding: 8px 14px;
     margin: 0px 5px;
     letter-spacing: 2px;
@@ -257,7 +273,12 @@ button{
 }
 
 button:hover{
-    background-color: #7f00ff;
+    background-color: white;
+    color:#0CBC8B;
+}
+
+button:hover a{
+    color:#0CBC8B
 }
 
 .imgbox{
@@ -274,16 +295,111 @@ button:hover{
     position: relative;
     width: calc(130% - 80px);
     top:-15px;
-    right: 100px;
-    animation: animaterUser 3s linear infinite;
+    right: 20px;
+    z-index: 1;
 }
 
-/* @keyframes animaterUser {
+.triangle{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 25%;
+    top:50%;
+    animation: animateTriangle 20s infinite linear;
+}
+
+.triangleGreen{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5%;
+    top:40%;
+    animation: animateTriangleGreen  10s infinite linear;
+}
+.circle{
+    width: 40px;
+    position: absolute;
+    left: 13%;
+    top:40%;
+    animation: circleGreen  20s infinite linear;   
+}
+
+.squareBlue{
+    position: absolute;
+    left: 53%;
+    top:10%;
+    animation: circleGreen  20s infinite linear;   
+}
+.squareGreen{
+    position: absolute;
+    left: 43%;
+    top:80%;
+    animation: squareGreen  20s infinite linear;   
+}
+.squareGreen2{
+    position: absolute;
+    right: 3%;
+    top:20%;
+    animation: squareGreen2  20s infinite linear;   
+}
+.blueCircle{
+    position: absolute;
+    left:50%;
+    top:30%;
+    animation: blueCircle  60s infinite linear;   
+}
+@keyframes blueCircle {
     50%{
-        top:-19px;
-        right: 0px;
+        transform: rotateZ(359deg);
     }
-} */
+}
+@keyframes squareGreen {
+    50%{
+        transform: rotate(0deg);
+        left: 33%;
+        top:30%;
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes squareGreen2 {
+    50%{
+        transform: rotate(0deg);
+        right: 53%;
+        top:60%;
+        transform: rotate(359deg);
+    }
+    60%{
+    
+    }
+}
+
+
+@keyframes animateTriangle {
+      50%{
+        transform: rotate(0deg);
+        left:50px;
+        top:30%;
+        transform: rotate(359deg);
+      }
+}
+
+@keyframes animateTriangleGreen {
+    50%{
+    transform: rotate(0deg);
+    right: 5%;
+    top:50%;
+    transform: rotate(359deg);
+    }
+    
+}
+
+@keyframes circleGreen {
+    50%{
+        transform: rotateY(360deg);
+    }
+    
+}
 
 /* css for skill section*/
 
@@ -307,6 +423,8 @@ button:hover{
     display: block;
     font-size: 1.2em;
     color: #3d535f;
+    font-family: regular;
+    font-size: 15px;
 }
 
 .skill_container{
@@ -318,7 +436,7 @@ button:hover{
 .skill_image{
     padding-top: 0px;
     width: 45%;
-    /* height: 400px; */
+    height: 400px;
     top:0;
 }
 .skill_image > img{
@@ -326,26 +444,24 @@ button:hover{
     height: 100%;
     object-fit: cover;
     position: relative;
-    width: calc(130% - 80px);
-    top:-5px;
-    right: 40px;
+    top:45px;
+    /* right: 40px; */
     animation: animaterUser 3s linear infinite;
 }
 
 .skill_description{
-    width: 55%;
+    width: 50%;
     height: auto;
     margin-top: 30px;
-    background: #f4f4f4;
-    padding: 10px;
+    background: #ebf2ff;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    /* row-gap: 20px; */
     border-radius: 10px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    box-shadow: 0 6px 15px rgba(36, 37, 38, 0.219);
-
+    font-family: regular;
 }
 
 .skill_desc_header{
@@ -359,18 +475,21 @@ button:hover{
 }
 
 .skill_desc_webtools{
-    width: 100%;
+    width: 50%;
     margin-top: 2%;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    
-    /* background: #000; */
 }
 .icon{
     margin-top: 3px;
     font-size: 14px;
-    color:#7f00ff;
+    color:#5F7EEC;
+}
+
+.skill_set{
+    display:flex;
+    column-gap: 10px;
 }
 .skill_desc_webtool_name{
     padding: 10px 30px;
@@ -378,7 +497,7 @@ button:hover{
     align-items: center;
     justify-content: flex-start;
     background-color: white;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     border-radius: 5px ;
     column-gap: 10px;
     padding-left: 30px;
@@ -386,7 +505,7 @@ button:hover{
 
 .skill_desc_webtool_name:hover {
     color: white;
-    background-color: #7f00ff;
+    background-color: #5F7EEC;
     cursor: pointer;
     transform: translateY(-10px);
     
@@ -421,6 +540,7 @@ button:hover{
     font-size: 30px;
     font-weight: 400;
     font-family: medium;
+    font-family: semibold;
     line-height:.5;
 }
 
@@ -432,7 +552,7 @@ button:hover{
     height: 4px;
     width: 65px;
     bottom: 10px;
-    background: #7f00ff;
+    background: #0CBC8B;
 }
 
 .about_container{
@@ -452,13 +572,20 @@ button:hover{
     padding: 20px;
     font-size: 13px;
     font-weight: 600;
-    font-family: extraLight;
-    background: #f4f4f5;
+    font-family:semibold;
+    background: #ebf2ff;
     border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(36, 37, 38, 0.219);
+    /* box-shadow: 0 6px 15px rgba(36, 37, 38, 0.219); */
 
     
 }
+
+.about_intro{
+    font-family: regular;
+    font-weight: normal;
+    font-size: 15px;
+}
+
 .photo_container{
     width: 50%;
     height: auto;
@@ -469,11 +596,11 @@ button:hover{
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    
+    height: 400px;
 }
 .image_container > img{
     width: 100%;
-    /* height: 400px; */
+    height: 400px;
 
 }
 
@@ -499,20 +626,21 @@ button:hover{
     width: 55%;
     height: 100%;
     padding: 20px;
-    background:#f4f4f5;
+    background:#ebf2ff;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     row-gap: 10px;
     border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(36, 37, 38, 0.219);
+    /* box-shadow: 0 6px 15px rgba(36, 37, 38, 0.219); */
 
 }
 .form_heading{
     text-align:left;
     text-transform: capitalize;
     align-self: flex-start;
+    font-family: semibold;
 }
 .form_group{
     width: 100%;
@@ -525,32 +653,36 @@ button:hover{
 
 .input_field , .input_textarea{
     outline:none;
-    /* text-indent: 1px; */
     padding: 10px;
     width: 100%;
-    border:1px solid #3d535f;
-    background:#f4f4f5;
+    border:1px solid black;
+    background:#ebf2ff;
+    font-family: regular;
 }
 input::placeholder{
-    color:#3d535f;
+    color:#5F7EEC;
+    font-family: regular;
 }
 .input_textarea{
     width: 100%;
     height: 150px;
     text-indent:1px;
     text-transform: capitalize;
+    font-family: regular;
 }
 textarea::placeholder{
-    color: #3d535f;
+    color:#5F7EEC;
+    font-family: regular;
 }
 .button{
     width: 100px;
     border:none;
     padding:10px 20px;
     text-align: center;
-    background: #3d535f;
+    background: #0CBC8B;
     color: rgb(255, 255, 255);
     text-transform: capitalize;
+    font-family: bold;
 }
 
 /* css for footer */
@@ -558,32 +690,36 @@ textarea::placeholder{
     height: auto;
     width: 100%;
     padding-bottom: 10px;
+    position: relative;
 }
 .footer_name{
+    margin-top: 50px;
     text-align: center;
     font-size: 25px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: semibold;
+}
+.footer_value{
+    text-align: center;
+    font-family: regular;
 }
 .footer_name::after{
     content: '';
     display: block;
-    width: 2em;
-    height: .8px;
+    width: 3em;
+    height: 4px;
     color: white;
-    margin: 0.1em auto 0em;
-    background: black;
-    opacity: 0.6;
+    margin: .2em auto 0em;
+    background: #0cbc8ac0;
+    opacity: 1;
     margin-bottom: 5px;
 }
 .footer_email{
-    /* padding-top: 5px; */
     text-align: center;
     font-size: 15px;
     font-weight: 500;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .footer_contact{
-    /* margin-top: 20px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -595,10 +731,7 @@ textarea::placeholder{
     padding: 0px;
     margin: 0px;
 }
-.footer_value{
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+
 .icons{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -616,7 +749,7 @@ textarea::placeholder{
 
 
 .icons:hover{
-    background:#7f00ff;
+    background:#0CBC8B;
     cursor: pointer;
     transform: translateY(-10px);
     transition: .8s;
@@ -625,6 +758,48 @@ textarea::placeholder{
     color:white
 }
 
+.contact_whatsapp{
+    width: auto;
+    height: 40px;
+    z-index:20;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    background:#0CBC8B;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    column-gap: 5px;
+    cursor: pointer;
+    transition: .6s;
+}
+.contact_whatsapp:hover{
+    background: white;
+    border: 1px solid #0CBC8B;
+}
+.whatsapp_icon{
+    font-size: 20px;
+    color: white;
+    transition: .6s;
+
+}
+.whatsapp_text{
+    font-size: 15px;
+    font-family: regular;
+    color: white;
+    transition: .6s;
+
+}
+
+.contact_whatsapp:hover .whatsapp_text{
+    color:#0CBC8B;
+}
+
+.contact_whatsapp:hover .whatsapp_icon{
+    color:#0CBC8B;
+    
+}
 @media (min-width:200px) and (max-width:780px)
 {
     .elem{
@@ -651,8 +826,15 @@ textarea::placeholder{
         justify-content: space-between;
       
     }
+    .blueCircle{
+        position: absolute;
+        left:30px;
+        top:50%;
+        /* width: 50px; */
+    }
     .logo{
         font-size:25px;
+        margin: 0px;
     }
     .nav_container{
         width: 100%;
@@ -674,6 +856,10 @@ textarea::placeholder{
         text-align: left;
         padding: 0px;
         
+    }
+    .circle ,.squareGreen{
+        /* top:18%; */
+        display: none;
     }
 
     .banner{
@@ -716,7 +902,7 @@ textarea::placeholder{
     margin: 0px 5px;
     letter-spacing: 2px;
     text-transform: capitalize;
-    box-shadow: 0 15px 10px rgba(0,0,0,0.4);
+    /* box-shadow: 0 15px 10px rgba(0,0,0,0.4); */
     
    }
 
@@ -735,7 +921,9 @@ textarea::placeholder{
 
    }
 
-
+   .skills_heading{
+    font-size: 15px;
+   }
    .skill_container{
      flex-direction: column;
     padding-top: 0px;
@@ -744,24 +932,33 @@ textarea::placeholder{
    }
 
    .skill_image{
-       display: flex;
-       align-items: flex-start;
-       justify-content: flex-start;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
         width: 100%;
         margin-top: 0px;
+        height: auto;
+      
    }
    .skill_image > img{
         height: 290px;
         width: 100%;
         right: 0px;
+        top:0px
    }
 
    .skill_description{
-    width: 100%;
-    border-radius:10px;
+        width: 100%;
+        border-radius:10px;
+        margin-top: 0px;
+        padding: 10px;
    }
-   .skills_heading{
-    font-size: 17px;
+   .skill_desc_webtools{
+        width: 100%;
+   }
+   .skill_set{
+    flex-direction: column;
+    row-gap: 5px;
    }
    .html_css{
     display: flex;
@@ -774,9 +971,13 @@ textarea::placeholder{
     font-size:14px;
     line-height: 1.3;
    }
-   
+   .skill_desc_moto{
+    font-size: 13px;
+   }
     .about_section{
         height: auto;
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
     .about_container{
         flex-direction: column;
@@ -795,10 +996,11 @@ textarea::placeholder{
     }
 
     .image_container > img{
-        height: 250px;
+        height: 280px;
         width: 100%;
-        object-fit: cover;
+        /* object-fit: cover; */
         right: 0px;
+        top: -29px;
         
     }
     .about_information{
@@ -821,6 +1023,7 @@ textarea::placeholder{
     }
     .contact_section{
         width: 100%;
+        padding-top: 0px;
     }
     .contact_container{
         width: 100%;
