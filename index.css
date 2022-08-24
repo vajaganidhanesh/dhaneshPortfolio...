@@ -1037,6 +1037,9 @@ textarea::placeholder{
     .input_field{
         padding: 5px;
     }
+    .input_textarea{
+        padding-left: 3px;
+    }
 
     .profile_name{
         text-align: center;
