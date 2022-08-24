@@ -408,6 +408,8 @@ button:hover a{
     height: auto;
     box-sizing: border-box;
     padding: 30px;
+    position: relative;
+    z-index: 50;
 }
 .skill_main{
     width:100%;
@@ -761,22 +763,25 @@ textarea::placeholder{
 .contact_whatsapp{
     width: auto;
     height: 40px;
-    z-index:20;
+    z-index:100;
     position: fixed;
     right: 15px;
     bottom: 15px;
     background:#0CBC8B;
+    box-shadow: 2px 2px 3px #999;
     border-radius: 50px;
     display: flex;
     align-items: center;
     padding: 10px;
     column-gap: 5px;
     cursor: pointer;
-    transition: .6s;
+    transition: .3s;
+
+    
 }
 .contact_whatsapp:hover{
     background: white;
-    border: 1px solid #0CBC8B;
+    border: 2px solid #0CBC8B;
 }
 .whatsapp_icon{
     font-size: 20px;
