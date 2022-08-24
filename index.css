@@ -662,8 +662,9 @@ button:hover a{
     font-family: regular;
 }
 input::placeholder{
-    color:#5F7EEC;
+    color:#3d535f;
     font-family: regular;
+    font-size: 14px;
 }
 .input_textarea{
     width: 100%;
@@ -673,8 +674,10 @@ input::placeholder{
     font-family: regular;
 }
 textarea::placeholder{
-    color:#5F7EEC;
+    color:#3d535f;
     font-family: regular;
+    font-size: 14px;
+
 }
 .button{
     width: 100px;
@@ -685,6 +688,11 @@ textarea::placeholder{
     color: rgb(255, 255, 255);
     text-transform: capitalize;
     font-family: bold;
+    transition: .3s;
+}
+.button:hover{
+    color: #0CBC8B;
+    background-color: #fff;
 }
 
 /* css for footer */
