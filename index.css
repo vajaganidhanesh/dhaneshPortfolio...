@@ -369,9 +369,7 @@ button:hover a{
         top:60%;
         transform: rotate(359deg);
     }
-    60%{
-    
-    }
+   
 }
 
 
@@ -427,6 +425,10 @@ button:hover a{
     color: #3d535f;
     font-family: regular;
     font-size: 15px;
+    z-index: 50;
+}
+.section_heading{
+    z-index: 50;
 }
 
 .skill_container{
@@ -434,12 +436,15 @@ button:hover a{
     column-gap: 30px;
     padding-top: 60px;
     height: auto;
+    position: relative;
+    z-index: 50;
 }
 .skill_image{
     padding-top: 0px;
     width: 45%;
     height: 400px;
     top:0;
+    z-index:50;
 }
 .skill_image > img{
     width: 100%;
@@ -448,6 +453,7 @@ button:hover a{
     position: relative;
     top:45px;
     /* right: 40px; */
+    z-index:50;
     animation: animaterUser 3s linear infinite;
 }
 
@@ -464,6 +470,7 @@ button:hover a{
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     font-family: regular;
+    z-index: inherit;
 }
 
 .skill_desc_header{
@@ -492,6 +499,7 @@ button:hover a{
 .skill_set{
     display:flex;
     column-gap: 10px;
+    z-index: 50;
 }
 .skill_desc_webtool_name{
     padding: 10px 30px;
@@ -499,7 +507,6 @@ button:hover a{
     align-items: center;
     justify-content: flex-start;
     background-color: white;
-    /* text-transform: capitalize; */
     border-radius: 5px ;
     column-gap: 10px;
     padding-left: 30px;
@@ -515,7 +522,46 @@ button:hover a{
 .skill_desc_webtool_name:hover .icon{
     color: white;
 }
+.Skillcircle{
+    width: 40px;
+    width: 40px;
+    position: absolute;
+    top:20%;
+    left: 3%;
+    animation: circleGreen  20s infinite linear; 
+}
+.bluePlus{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top:10%;
+    left: 30%;
+    opacity: .5 ;
+    animation: bluePlus 5s linear infinite;
+}
+.mobile_blue_plus{
+    display: none;
+}
+.skillCloud{
+    position:absolute;
+    right: 40%;
+    top:8%;
+    width: 300px;
+    animation: cloud 3s linear infinite;
 
+}
+@keyframes bluePlus {
+    0%{
+        transform: rotateZ(359deg);
+    }
+}
+
+@keyframes cloud {
+    50%{
+        top:6%;
+        right: 38%;
+    }
+}
 /* css for about section */
 
 .about_section{
@@ -603,7 +649,6 @@ button:hover a{
 .image_container > img{
     width: 100%;
     height: 400px;
-
 }
 
 /* css for contact section */
@@ -986,6 +1031,23 @@ textarea::placeholder{
    .skill_desc_moto{
     font-size: 13px;
    }
+   .mobile_blue_plus{
+    left: 80%!important;
+    opacity: .7 ;
+    display: block;
+
+   }
+   .skillCloud{
+    width: 200px;
+    top:4.5%;
+    right: 25%;
+   }
+   @keyframes cloud {
+    50%{
+        top:6%;
+        right: 26%;
+    }
+}
     .about_section{
         height: auto;
         padding-top: 0px;
@@ -1033,6 +1095,11 @@ textarea::placeholder{
         margin-top: 8px;
         height: auto;
     }
+    .bluePlus{
+        top:17%;
+        left: 10%;
+    }
+
     .contact_section{
         width: 100%;
         padding-top: 0px;
@@ -1056,7 +1123,6 @@ textarea::placeholder{
         background: #0CBC8B;
     }
     .button:active{
-        /* transition: .3s; */
         transform: scale(1.1);
         color: #0CBC8B;
         background: white;

@@ -113,3 +113,28 @@ window.onscroll=function(){
         document.getElementById("navbar").style.transition='3s';
     }
 }
+
+let send_button = document.getElementById('send_btn');
+
+send_button.addEventListener('click',(e)=>{
+    e.preventDefault();
+    let name = document.getElementById('name').value; 
+    let email = document.getElementById('email').value;   
+    let subject = document.getElementById('subject').value;
+    let textarea = document.getElementById('textarea').value;
+    let body = 'name: '+name + '<br/> email: ' + email + '<br/> subject' +
+    subject + '<br/> message' +textarea
+
+    console.log('hi');
+    Email.send({
+        Host : "smtp.gmail.com",
+        Username : "vajaganichintu@gmail.com",
+        Password : "tokvffjnntmjucje",
+        To : 'vajaganidhanesh@gmail.com',
+        From : email,
+        Subject : subject,
+        Body : body
+    }).then(
+      message => alert(message)
+    );
+})

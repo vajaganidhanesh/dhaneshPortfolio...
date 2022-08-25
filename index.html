@@ -166,11 +166,16 @@
                     
 
                 </div>
-                
+                <img class="Skillcircle" src="./assets/blue_Circle.png" alt="">
+                 <img class="bluePlus" src="./assets/plusblue.png" alt="">
+                 <!-- <img class="skilltriangle" src="./assets/cloud.png" alt=""> -->
             </div>
-            <img class="circle" src="./assets/circleblue.png" alt="">
-
+            
+            <img class="skillCloud" src="./assets/cloud.png" alt="">
+            <img class="bluePlus mobile_blue_plus" src="./assets/plusblue.png" alt="">
+           
         </div>
+        
     </section>
 
     <!-- about section -->
@@ -217,13 +222,15 @@
                 <h3 class="form_heading">Mail me</h3>
                 <form class="form_group" action="">
 
-                    <input class="input_field" type="text" placeholder="Please enter fullname">
+                    <input class="input_field" type="text" id="name" placeholder="Please enter fullname">
 
-                    <input class="input_field" type="text" placeholder="Please enter email"> 
+                    <input class="input_field" type="text" id="email" placeholder="Please enter email">
 
-                    <textarea name="" id="" cols="30" rows="10" class="input_textarea"  placeholder="Write message here"></textarea>
+                    <input class="input_field" type="text" id="subject" placeholder="Please enter subject"> 
 
-                    <input type="button" class="button" value="send">
+                    <textarea name="" id="textarea" cols="30" rows="10" class="input_textarea"  placeholder="Write message here"></textarea>
+
+                    <input type="button" class="button" id="send_btn" value="send">
                 </form>
             </div>
             
@@ -264,5 +271,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
     <script src="./index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </body>
 </html>
