@@ -114,27 +114,47 @@ window.onscroll=function(){
     }
 }
 
-let send_button = document.getElementById('send_btn');
+let formdata = {
+    name:null,
+    email:null,
+    subject:null,
+    textarea:null
+}
 
-send_button.addEventListener('click',(e)=>{
-    e.preventDefault();
-    let name = document.getElementById('name').value; 
-    let email = document.getElementById('email').value;   
-    let subject = document.getElementById('subject').value;
-    let textarea = document.getElementById('textarea').value;
-    let body = 'name: '+name + '<br/> email: ' + email + '<br/> subject' +
-    subject + '<br/> message' +textarea
+function readvalue(property,event)
+{
+ 
+   if(event.target.value!=="")
+    {
+        formdata[property] = event.target.value;
+        console.log(formdata);
+    }
+    else
+    {
+        formdata[property]=null;
+    }
+}
 
-    console.log('hi');
-    Email.send({
-        Host : "smtp.gmail.com",
-        Username : "vajaganichintu@gmail.com",
-        Password : "tokvffjnntmjucje",
-        To : 'vajaganidhanesh@gmail.com',
-        From : email,
-        Subject : subject,
-        Body : body
-    }).then(
-      message => alert(message)
-    );
-})
+function sendmail()
+{
+    if(formdata.name!==null && formdata.email!==null && formdata.subject!==null && formdata.textarea!==null)
+    {
+        fetch('http://localhost:8000/user/sendmail',{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(formdata)
+        })
+        .then((response)=>response.json())
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }
+    else{
+        console.log("please enter details");
+    }
+}

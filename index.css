@@ -539,7 +539,7 @@ button:hover a{
     opacity: .5 ;
     animation: bluePlus 5s linear infinite;
 }
-.mobile_blue_plus{
+.mobile_blue_plus,.mobileSkillcircle{
     display: none;
 }
 .skillCloud{
@@ -1031,6 +1031,9 @@ textarea::placeholder{
    .skill_desc_moto{
     font-size: 13px;
    }
+   .bluePlus, .Skillcircle{
+    display: none;
+   }
    .mobile_blue_plus{
     left: 80%!important;
     opacity: .7 ;
@@ -1041,6 +1044,12 @@ textarea::placeholder{
     width: 200px;
     top:4.5%;
     right: 25%;
+   }
+   .mobileSkillcircle{
+    display: block;
+    left: 10%;
+    top:15%;
+
    }
    @keyframes cloud {
     50%{

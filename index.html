@@ -161,6 +161,7 @@
                                 <div class="skill_desc_tool">Visual studio code</div>
                             </div>
                         </div>
+                         
     
                     </div>
                     
@@ -170,7 +171,7 @@
                  <img class="bluePlus" src="./assets/plusblue.png" alt="">
                  <!-- <img class="skilltriangle" src="./assets/cloud.png" alt=""> -->
             </div>
-            
+            <img class="Skillcircle mobileSkillcircle" src="./assets/blue_Circle.png" alt="">   
             <img class="skillCloud" src="./assets/cloud.png" alt="">
             <img class="bluePlus mobile_blue_plus" src="./assets/plusblue.png" alt="">
            
@@ -222,15 +223,15 @@
                 <h3 class="form_heading">Mail me</h3>
                 <form class="form_group" action="">
 
-                    <input class="input_field" type="text" id="name" placeholder="Please enter fullname">
+                    <input class="input_field" type="text" id="name" placeholder="Please enter fullname" onkeyup="readvalue('name',event)">
 
-                    <input class="input_field" type="text" id="email" placeholder="Please enter email">
+                    <input class="input_field" type="text" id="email" placeholder="Please enter email" onkeyup="readvalue('email',event)">
 
-                    <input class="input_field" type="text" id="subject" placeholder="Please enter subject"> 
+                    <input class="input_field" type="text" id="subject" placeholder="Please enter subject" onkeyup="readvalue('subject',event)"> 
 
-                    <textarea name="" id="textarea" cols="30" rows="10" class="input_textarea"  placeholder="Write message here"></textarea>
+                    <textarea name="" id="textarea" cols="30" rows="10" class="input_textarea"  placeholder="Write message here" onkeyup="readvalue('textarea',event)"></textarea>
 
-                    <input type="button" class="button" id="send_btn" value="send">
+                    <input type="button" class="button" id="send_btn" value="send" onclick="sendmail()" >
                 </form>
             </div>
             
