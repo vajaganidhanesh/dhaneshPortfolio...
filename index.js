@@ -139,7 +139,7 @@ function sendmail()
 {
     if(formdata.name!==null && formdata.email!==null && formdata.subject!==null && formdata.textarea!==null)
     {
-        fetch('http://localhost:8000/user/sendmail',{
+        fetch('https://dhanesh-portfolio.herokuapp.com/user/sendmail',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
