@@ -130,7 +130,14 @@
     font-size: 30px;
     align-items: center;
     font-family: semibold;
+    cursor: pointer;
+    transition: .3s;
 }
+
+.logo:hover{
+    color:#0CBC8B;
+}
+
 .nav_container{
     width:50%;
     height:auto;

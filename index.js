@@ -105,12 +105,14 @@ window.onscroll=function(){
     if(window.pageYOffset>=200)
     {
         document.getElementById("navbar").style.background= 'white';
-        document.getElementById("navbar").style.boxShadow= '0 0px 10px rgba(36, 37, 38, 0.881); ';
+        document.getElementById("navbar").style.boxShadow= ' 0px 2px 4px rgba(0, 0, 0, 0.25)';
+        // border-radius: 10px';
         document.getElementById("navbar").style.transition='1s';
     }
     else{
         document.getElementById("navbar").style.background= 'transparent';
-        document.getElementById("navbar").style.transition='3s';
+        document.getElementById("navbar").style.boxShadow= ' 0px 0px 0px rgba(0, 0, 0, 0.25)';
+        document.getElementById("navbar").style.transition='1s';
     }
 }
 
@@ -139,7 +141,9 @@ function sendmail()
 {
     if(formdata.name!==null && formdata.email!==null && formdata.subject!==null && formdata.textarea!==null)
     {
-        fetch('https://dhanesh-portfolio.herokuapp.com/user/sendmail',{
+        // fetch('https://dhanesh-portfolio.herokuapp.com/user/sendmail',{
+        fetch('http://localhost:8000/user/sendmail',{
+        
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
