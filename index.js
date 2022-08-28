@@ -141,8 +141,8 @@ function sendmail()
 {
     if(formdata.name!==null && formdata.email!==null && formdata.subject!==null && formdata.textarea!==null)
     {
-        // fetch('https://dhanesh-portfolio.herokuapp.com/user/sendmail',{
-        fetch('http://localhost:8000/user/sendmail',{
+        fetch('https://dhanesh-portfolio.herokuapp.com/user/sendmail',{
+        // fetch('http://localhost:8000/user/sendmail',{
         
             method:'POST',
             headers:{
@@ -153,6 +153,10 @@ function sendmail()
         .then((response)=>response.json())
         .then((data)=>{
             console.log(data);
+            if(data.success === true)
+            {
+                receiveMail()
+            }
         })
         .catch((err)=>{
             console.log(err);
@@ -164,8 +168,8 @@ function sendmail()
 }
 
 function receiveMail(){
-    // fetch('https://dhanesh-portfolio.herokuapp.com/user/sendmail',{
-        fetch('http://localhost:8000/user/receivemail',{
+    fetch('https://dhanesh-portfolio.herokuapp.com/user/receivemail',{
+        // fetch('http://localhost:8000/user/receivemail',{
         
             method:'POST',
             headers:{
