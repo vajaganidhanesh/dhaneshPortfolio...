@@ -162,3 +162,22 @@ function sendmail()
         console.log("please enter details");
     }
 }
+
+function receiveMail(){
+    // fetch('https://dhanesh-portfolio.herokuapp.com/user/sendmail',{
+        fetch('http://localhost:8000/user/receivemail',{
+        
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(formdata)
+        })
+        .then((response)=>response.json())
+        .then((data)=>{
+            console.log(data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+}
