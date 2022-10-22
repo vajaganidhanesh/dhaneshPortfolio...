@@ -146,7 +146,6 @@ let inputs = [inputName,inputEmail,inputSubject,inputText];
 function errorMessage(data,color,fontColor){
 
     inputs.forEach((value,index)=>{
-        console.log("hello");
         value.style.border ="1.5px solid" + color;
         value.style.transition='.3s';
     })
@@ -180,6 +179,11 @@ function errorMessage(data,color,fontColor){
 
     }, 5000);
 
+}
+
+function moveSlider()
+{
+    notification.style.left='100%'
 }
 
 
