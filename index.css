@@ -709,9 +709,17 @@ button:hover a{
     outline:none;
     padding: 10px;
     width: 100%;
-    border:1px solid black;
-    background:#ebf2ff;
+    border:1px solid transparent;
+    background:#fff;
+    border-radius: 8px;
     font-family: regular;
+}
+.errorMessage{
+    outline: #0CBC8B;
+    border:1.3px solid #ff7777;
+    transition: .3s;
+    /* background:#ff00000f; */
+
 }
 input::placeholder{
     color:#3d535f;
@@ -732,7 +740,7 @@ textarea::placeholder{
 
 }
 .button{
-    width: 100px;
+    width: 100%;
     border:none;
     padding:10px 20px;
     text-align: center;
@@ -741,6 +749,7 @@ textarea::placeholder{
     text-transform: capitalize;
     font-family: bold;
     transition: .5s;
+    border-radius: 8px;
 }
 .button:hover{
     color: #0CBC8B;
@@ -865,6 +874,7 @@ textarea::placeholder{
     color:#0CBC8B;
     
 }
+
 @media (min-width:200px) and (max-width:780px)
 {
     .elem{
@@ -1127,6 +1137,7 @@ textarea::placeholder{
     }
     .form_container{
         width: 100%;
+        padding: 10px;
     }
     .input_field{
         padding: 5px;
@@ -1156,7 +1167,7 @@ textarea::placeholder{
     .contact_whatsapp{
         padding: 3px 10px;
         height: auto;
-        bottom: 30px;
+        bottom: 60px;
     }
     .whatsapp_text ,.whtsapp_icon{
        font-size: 14px;

@@ -1,5 +1,5 @@
 var typingEffect = new Typed(".multiText",{
-    strings: ['an ui designer','an emailer developer','a web developer'],
+    strings: ['an UI/UX Designer','an Emailer Template developer','a Web Developer'],
     loop:true,
     typeSpeed:100,
     backSpeed:80,
@@ -26,7 +26,7 @@ var tl = gsap.timeline();
 
 tl.from('a' , {
     stagger: .3,
-    duration: 1,
+    duration: 7,
     y: 20,
     delay:0,
     ease: 'Expo.easeInOut',
@@ -106,7 +106,6 @@ window.onscroll=function(){
     {
         document.getElementById("navbar").style.background= 'white';
         document.getElementById("navbar").style.boxShadow= ' 0px 0px 2px rgba(0, 0, 0, 0.25)';
-        // border-radius: 10px';
         document.getElementById("navbar").style.transition='1s';
     }
     else{
@@ -125,7 +124,7 @@ let formdata = {
 
 function readvalue(property,event)
 {
- 
+    
    if(event.target.value!=="")
     {
         formdata[property] = event.target.value;
@@ -136,6 +135,26 @@ function readvalue(property,event)
         formdata[property]=null;
     }
 }
+
+    let inputName = document.getElementById('name')
+    let inputEmail = document.getElementById('email')
+    let inputSubject = document.getElementById('subject')
+    let inputText = document.getElementById('textarea')
+
+    function errorMessage(){
+        
+        setTimeout(() => {
+            inputName.classList.remove('errorMessage')
+            inputEmail.classList.remove('errorMessage')
+            inputSubject.classList.remove('errorMessage')
+            inputText.classList.remove('errorMessage')
+        }, 3000);
+
+            inputName.classList.add('errorMessage')
+            inputEmail.classList.add('errorMessage')
+            inputSubject.classList.add('errorMessage')
+            inputText.classList.add('errorMessage')
+    }
 
 function sendmail()
 {
@@ -156,6 +175,16 @@ function sendmail()
             if(data.success === true)
             {
                 receiveMail()
+                document.getElementById('name').value="";
+                document.getElementById('email').value=""
+                document.getElementById('subject').value=""
+                document.getElementById('textarea').value=""
+
+            }
+            else{
+                
+                errorMessage()
+               
             }
         })
         .catch((err)=>{
@@ -163,6 +192,7 @@ function sendmail()
         })
     }
     else{
+        errorMessage()
         console.log("please enter details");
     }
 }
