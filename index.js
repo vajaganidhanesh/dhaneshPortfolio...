@@ -1,5 +1,5 @@
 var typingEffect = new Typed(".multiText",{
-    strings: ['an UI/UX Designer','an Emailer Template developer','a Web Developer'],
+    strings: ['an UI/UX Designer','an Emailer developer','a Web Developer'],
     loop:true,
     typeSpeed:100,
     backSpeed:80,
@@ -26,7 +26,7 @@ var tl = gsap.timeline();
 
 tl.from('a' , {
     stagger: .3,
-    duration: 7,
+    duration: 1,
     y: 20,
     delay:0,
     ease: 'Expo.easeInOut',
@@ -136,25 +136,51 @@ function readvalue(property,event)
     }
 }
 
-    let inputName = document.getElementById('name')
-    let inputEmail = document.getElementById('email')
-    let inputSubject = document.getElementById('subject')
-    let inputText = document.getElementById('textarea')
+let inputName = document.getElementById('name')
+let inputEmail = document.getElementById('email')
+let inputSubject = document.getElementById('subject')
+let inputText = document.getElementById('textarea')
 
-    function errorMessage(){
-        
-        setTimeout(() => {
-            inputName.classList.remove('errorMessage')
-            inputEmail.classList.remove('errorMessage')
-            inputSubject.classList.remove('errorMessage')
-            inputText.classList.remove('errorMessage')
-        }, 3000);
+let inputs = [inputName,inputEmail,inputSubject,inputText];
 
-            inputName.classList.add('errorMessage')
-            inputEmail.classList.add('errorMessage')
-            inputSubject.classList.add('errorMessage')
-            inputText.classList.add('errorMessage')
-    }
+function errorMessage(data,color,fontColor){
+
+    inputs.forEach((value,index)=>{
+        console.log("hello");
+        value.style.border ="1.5px solid" + color;
+        value.style.transition='.3s';
+    })
+    
+    setTimeout(() => {
+        inputs.forEach((value,index)=>{
+            value.style.border = 'transparent';
+            value.style.transition='.3s';
+        })
+    }, 3000);
+
+    
+    
+    let notification = document.getElementById('notification');
+    
+    notification.style.left='0'
+    notification.style.display='flex';
+    notification.style.background=color;
+    notification.style.transition='.5s';
+    
+    let message = document.getElementById('message');
+    message.innerText=data;
+    message.style.color=fontColor;
+    
+    let messageIcon = document.getElementById('messageIcon');
+    messageIcon.style.color=fontColor;
+
+    setTimeout(() => {
+        notification.style.transition='.5s';
+        notification.style.left='100%'
+
+    }, 5000);
+
+}
 
 function sendmail()
 {
@@ -175,15 +201,22 @@ function sendmail()
             if(data.success === true)
             {
                 receiveMail()
-                document.getElementById('name').value="";
-                document.getElementById('email').value=""
-                document.getElementById('subject').value=""
-                document.getElementById('textarea').value=""
+
+                let data = 'Feedback received Successfully!...';
+                let color = '#0cbc8a4f';
+                let fontColor = 'green';
+
+                document.getElementById("email_form").reset();
+                errorMessage(data,color,fontColor);
+                // window.location.assign("./index.html/")
+
 
             }
             else{
-                
-                errorMessage()
+                let data = 'Please provide valid details!...';
+                let color = '#ff000033';
+                let fontColor = 'red'
+                errorMessage(data,color,fontColor)
                
             }
         })
@@ -192,7 +225,10 @@ function sendmail()
         })
     }
     else{
-        errorMessage()
+        let data = 'Please provide details!...';
+        let color = '#ff000033';
+        let fontColor = 'red';
+        errorMessage(data,color,fontColor)
         console.log("please enter details");
     }
 }

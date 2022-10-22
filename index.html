@@ -13,7 +13,7 @@
 <body>
     <!-- loader area -->
 
-        <div class="loader" id="loader">
+        <!-- <div class="loader" id="loader">
             <div id="wrapper_load">
                 <div class="elem">
                     <div>Aspiring web developer1</div>
@@ -25,9 +25,20 @@
                     <div>Aspiring web developer3</div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     <!-- header section -->
+
+    <!-- error notification section -->
+    
+    <div class="notification" id="notification">
+        <div class="notification_message">
+            <div id="message">Feedback recevied successfully</div>
+            <i id="messageIcon" class="fa-sharp fa-solid fa-circle-xmark"></i>
+        </div>
+    </div>
+
+
 
     <header id="header" class="header ">
         <nav class="navbar" id="navbar">
@@ -72,13 +83,13 @@
 
                 </div>
             </div>
-            <img class="triangle" src="./assets/triangle.png" alt="">
+            <!-- <img class="triangle" src="./assets/triangle.png" alt="">
             <img class="triangleGreen" src="./assets/triangleGreen.png" alt="">
             <img class="circle" src="./assets/circle.png" alt="">
             <img class="squareBlue" src="./assets/squareBlue.png" alt="">
             <img class="squareGreen" src="./assets/square.png" alt="">
             <img class="squareGreen2" src="./assets/square.png" alt="">
-            <img class="blueCircle" src="./assets/circleblue.png" alt="">
+            <img class="blueCircle" src="./assets/circleblue.png" alt=""> -->
 
 
 
@@ -222,7 +233,7 @@
             </div>
             <div class="form_container reveal">
                 <h3 class="form_heading">Mail me</h3>
-                <form class="form_group" action="">
+                <form class="form_group" action="" id="email_form">
 
                     <input class="input_field" type="text" id="name" placeholder="Please enter fullname" onkeyup="readvalue('name',event)">
 
