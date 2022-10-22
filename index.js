@@ -182,10 +182,16 @@ function errorMessage(data,color,fontColor){
 
 }
 
+
+let loader = document.getElementById('email_loader');
+
+
 function sendmail()
 {
     if(formdata.name!==null && formdata.email!==null && formdata.subject!==null && formdata.textarea!==null)
     {
+
+        loader.style.display='flex';
         fetch('https://dhanesh-portfolio.herokuapp.com/user/sendmail',{
         // fetch('http://localhost:8000/user/sendmail',{
         
@@ -201,6 +207,8 @@ function sendmail()
             if(data.success === true)
             {
                 receiveMail()
+                loader.style.display='none';
+
 
                 let data = 'Feedback received Successfully!...';
                 let color = '#0cbc8a4f';
@@ -208,15 +216,18 @@ function sendmail()
 
                 document.getElementById("email_form").reset();
                 errorMessage(data,color,fontColor);
-                // window.location.assign("./index.html/")
+                
 
 
             }
             else{
+
+                loader.style.display='none';
                 let data = 'Please provide valid details!...';
                 let color = '#ff000033';
                 let fontColor = 'red'
-                errorMessage(data,color,fontColor)
+                errorMessage(data,color,fontColor);
+
                
             }
         })
