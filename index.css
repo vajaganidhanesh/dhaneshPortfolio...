@@ -103,8 +103,6 @@
     width:100%;
     position: fixed;
     z-index: 100;
-    /* background-image: url(https://i.ibb.co/DKJ3NpK/email-photo.png); */
-    /* <a href="https://imgbb.com/"><img src="https://i.ibb.co/DKJ3NpK/email-photo.png" alt="email-photo" border="0"></a> */
     
 }
 .mobile{
@@ -251,7 +249,7 @@ h1{
 
 .multiText{
     color:#5F7EEC;
-    /* text-transform: capitalize; */
+    
 }
 
 p{
