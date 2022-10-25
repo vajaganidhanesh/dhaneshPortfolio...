@@ -152,7 +152,7 @@ function errorMessage(data,color,fontColor){
     
     setTimeout(() => {
         inputs.forEach((value,index)=>{
-            value.style.border = 'transparent';
+            value.style.border = '1.5px solid #ebf2ff';
             value.style.transition='.3s';
         })
     }, 3000);
@@ -219,6 +219,12 @@ function sendmail()
                 let fontColor = 'green';
 
                 document.getElementById("email_form").reset();
+                formdata = {
+                    name:null,
+                    email:null,
+                    subject:null,
+                    textarea:null
+                }
                 errorMessage(data,color,fontColor);
                 
 
@@ -250,7 +256,7 @@ function sendmail()
 
 function receiveMail(){
     fetch('https://dhanesh-portfolio.herokuapp.com/user/receivemail',{
-        // fetch('http://localhost:8000/user/receivemail',{
+        // fetch('http://localhost:8000/user/receivemail',{    
         
             method:'POST',
             headers:{
